@@ -1,7 +1,7 @@
 import ContactForm from "@/components/contactForm";
 import FAQSection from "@/components/faqSection";
-import FlexStatsSection from "@/components/flexComponent";
-import FlexProveComponent from "@/components/flexProveComponent";
+// import FlexStatsSection from "@/components/flexComponent";
+// import FlexProveComponent from "@/components/flexProveComponent";
 import Footer from "@/components/footer";
 import MainView from "@/components/mainView";
 import Navbar from "@/components/navbar";
