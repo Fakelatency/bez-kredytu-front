@@ -2,20 +2,20 @@
 
 import React, { useState } from "react";
 
-const topics = [
-    "Kredyt frankowy",
-    "Kredyt WIBOR",
-    "Wsparcie prawne",
-    "Odzyskiwanie środków",
-    "Porada prawna",
-    "Inny temat"
+const caseTypes = [
+    "CHF",
+    "EUR",
+    "Inna"
 ];
 
 const ContactForm: React.FC = () => {
+    const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [topic, setTopic] = useState(topics[0]);
-    const [info, setInfo] = useState("");
+    const [caseType, setCaseType] = useState(caseTypes[0]);
+    const [loanAmount, setLoanAmount] = useState("");
+    const [contractYear, setContractYear] = useState("");
+    const [consent, setConsent] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, phone, topic, info }),
+                body: JSON.stringify({ fullName, email, phone, caseType, loanAmount, contractYear }),
             });
 
             if (!response.ok) {
@@ -40,10 +40,13 @@ const ContactForm: React.FC = () => {
 
             setSubmitted(true);
             // Optionally clear the form
+            setFullName("");
             setEmail("");
             setPhone("");
-            setTopic(topics[0]);
-            setInfo("");
+            setCaseType(caseTypes[0]);
+            setLoanAmount("");
+            setContractYear("");
+            setConsent(false);
         } catch (err) {
             if (err instanceof Error) {
                 setError(err.message);
@@ -59,10 +62,10 @@ const ContactForm: React.FC = () => {
         <div className="px-6 py-10 max-w-[80%] mx-auto bg-gray-50 mt-[64px] rounded-3xl">
             <div className="text-center flex flex-col items-center justify-center mb-8">
                 <h1 className="text-4xl font-extrabold text-indigo-900 tracking-tight">
-                    Ty skontaktuj się z nami,
+                    Wypełnij poniższy formularz,
                 </h1>
                 <span className="text-lg text-red-700 mt-2 block">
-                    a my zaproponujemy termin spotkania
+                    a my zaproponujemy termin spotkania.
                 </span>
                 <hr className="my-6 border-t-2 border-gray-200 w-80" />
             </div>
@@ -71,18 +74,29 @@ const ContactForm: React.FC = () => {
                 onSubmit={handleSubmit}
             >
                 <label className="flex flex-col font-semibold text-indigo-800">
-                    Email
+                    Imię i nazwisko
+                    <input
+                        type="text"
+                        required
+                        className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+                        placeholder="Twoje imię i nazwisko"
+                        value={fullName}
+                        onChange={e => setFullName(e.target.value)}
+                    />
+                </label>
+                <label className="flex flex-col font-semibold text-indigo-800">
+                    Adres e-mail
                     <input
                         type="email"
                         required
                         className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
-                        placeholder="Twój email"
+                        placeholder="Twój adres e-mail"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
                 </label>
                 <label className="flex flex-col font-semibold text-indigo-800">
-                    Numer telefonu
+                    Nr tel.
                     <input
                         type="tel"
                         required
@@ -94,26 +108,55 @@ const ContactForm: React.FC = () => {
                     />
                 </label>
                 <label className="flex flex-col font-semibold text-indigo-800">
-                    Temat
+                    Rodzaj sprawy
                     <select
+                        required
                         className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
-                        value={topic}
-                        onChange={e => setTopic(e.target.value)}
+                        value={caseType}
+                        onChange={e => setCaseType(e.target.value)}
                     >
-                        {topics.map((t, idx) => (
+                        {caseTypes.map((t, idx) => (
                             <option key={idx} value={t}>{t}</option>
                         ))}
                     </select>
                 </label>
                 <label className="flex flex-col font-semibold text-indigo-800">
-                    Wiadomość
-                    <textarea
+                    Kwota kredytu lub innego zobowiązania (PLN)
+                    <input
+                        type="number"
                         required
-                        className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition min-h-[100px] resize-y"
-                        placeholder="Opisz swój temat lub pytanie"
-                        value={info}
-                        onChange={e => setInfo(e.target.value)}
+                        className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+                        placeholder="Kwota w PLN"
+                        value={loanAmount}
+                        onChange={e => setLoanAmount(e.target.value)}
+                        min="0"
+                        step="0.01"
                     />
+                </label>
+                <label className="flex flex-col font-semibold text-indigo-800">
+                    Rok zawarcia umowy
+                    <input
+                        type="number"
+                        required
+                        className="mt-2 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+                        placeholder="Rok (np. 2010)"
+                        value={contractYear}
+                        onChange={e => setContractYear(e.target.value)}
+                        min="1900"
+                        max={new Date().getFullYear()}
+                    />
+                </label>
+                <label className="flex items-start gap-3 font-semibold text-indigo-800">
+                    <input
+                        type="checkbox"
+                        required
+                        className="mt-1 w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+                        checked={consent}
+                        onChange={e => setConsent(e.target.checked)}
+                    />
+                    <span className="text-sm">
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i udzielenia odpowiedzi na zapytanie
+                    </span>
                 </label>
                 <button
                     type="submit"

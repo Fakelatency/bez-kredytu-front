@@ -21,18 +21,22 @@ const Footer: React.FC = () => {
             </div>
             {/* Company Info */}
             <div className="mt-6 text-sm text-[#2c3e50] opacity-80 text-center md:text-left">
-                <div>
-                    <strong>BezKredytu Sp. z o.o.</strong>
+                <div className="mb-2">
+                    <strong>BEZKREDYTU.COM SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</strong>
                 </div>
-                <div>
-                    ul. Przykładowa 1, 00-000 Warszawa
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                    <div>
+                        <strong>NIP:</strong> 9562409006
+                    </div>
                 </div>
-                <div>
-                    NIP: 123-456-78-90
+                <div className="mb-2">
+                    <strong>Adres siedziby:</strong> Szosa Chełmińska 26 / 403, 87-100 Toruń, Polska
                 </div>
-                <div>
-                    Tel: <a href="tel:+48123456789" className="hover:underline">+48 123 456 789</a> | 
-                    Email: <a href="mailto:kontakt@bezkredytu.com" className="hover:underline">kontakt@bezkredytu.com</a>
+                <div className="mb-2">
+                    <strong>Email:</strong> <a href="mailto:kontakt@bezkredytu.com" className="hover:underline">kontakt@bezkredytu.com</a>
+                </div>
+                <div className="mb-2">
+                    <strong>Telefon:</strong> <a href="tel:+48516091065" className="hover:underline">+48 516 091 065</a>
                 </div>
             </div>
             {/* Copyright */}

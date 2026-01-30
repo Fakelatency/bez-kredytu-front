@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Navbar />
       <MainView></MainView>
-      <FlexStatsSection></FlexStatsSection>
-      <FlexProveComponent></FlexProveComponent>
+      {/* <FlexStatsSection></FlexStatsSection> */}
+      {/* <FlexProveComponent></FlexProveComponent> */}
       <FAQSection></FAQSection>
       <ContactForm></ContactForm>
       <Footer></Footer>
