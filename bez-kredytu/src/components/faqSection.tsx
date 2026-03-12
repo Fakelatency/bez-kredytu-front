@@ -5,19 +5,19 @@ import { FaQuestionCircle } from "react-icons/fa";
 
 const faqs = [
     {
-        question: "Czym zajmuje się BezKredytu.com?",
+        question: "Czym zajmuje się Bez Kredytu?",
         answer:
-            "Prowadzimy sprawy związane z kredytami w walucie obcej. Podejmujemy kroki prawne w celu unieważnienia umów kredytowych zawierających klauzule niedozwolone, a także odzyskujemy niesłusznie zapłacone należności.",
+            "Odpowiedź na pytanie.",
     },
     {
         question: "Jak mogę się z Wami skontaktować?",
         answer:
-            "Wypełnij i wyślij poniższy formularz, a nasz pracownik niezwłocznie się Tobą skontaktuje.",
+            "Odpowiedź na pytanie.",
     },
     {
         question: "Czy usługa jest płatna?",
         answer:
-            "Nie. Analiza umowy jest bezpłatna. Pobieramy wynagrodzenie wyłącznie od uzyskanych korzyści.",
+            "Odpowiedź na pytanie.",
     },
 ];
 
@@ -32,8 +32,11 @@ const FAQSection: React.FC = () => {
         <div className="px-6 py-10 max-w-[80%] mx-auto bg-gray-50 mt-[64px] ">
             <div className="text-left">
                 <h1 className="text-5xl font-extrabold m-0 text-indigo-900 tracking-tight">
-                    Q&A
+                    Nurtujące pytania
                 </h1>
+                <span className="text-lg text-red-700 mt-2 block">
+                    I odpowiedzi na nie
+                </span>
                 <hr className="my-6 border-t-2 border-gray-200 w-80" />
             </div>
             <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

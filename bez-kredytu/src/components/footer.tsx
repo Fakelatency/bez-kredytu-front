@@ -30,18 +30,22 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className="mb-2">
-                    <strong>Adres siedziby:</strong> Szosa Chełmińska 26/403, 87-100 Toruń, Polska
+                    <strong>Adres siedziby:</strong> Szosa Chełmińska 26 / 403, 87-100 Toruń, Polska
                 </div>
                 <div className="mb-2">
                     <strong>Email:</strong> <a href="mailto:kontakt@bezkredytu.com" className="hover:underline">kontakt@bezkredytu.com</a>
                 </div>
                 <div className="mb-2">
-                    <strong>Telefon:</strong> <a href="tel:+48884006727" className="hover:underline">884 006 727</a>, <a href="tel:+48792006727" className="hover:underline">792 006 727</a>
+                    <strong>Telefon:</strong> <a href="tel:+48516091065" className="hover:underline">+48 516 091 065</a>
                 </div>
             </div>
             {/* Copyright */}
             <div className="text-center text-sm text-[#2c3e50] mt-6 opacity-70">
                 &copy; {new Date().getFullYear()} BezKredytu.com. Wszelkie prawa zastrzeżone.
+            </div>
+            {/* Credits */}
+            <div className="text-center text-xs text-[#2c3e50] mt-2 opacity-50">
+                Projekt i realizacja: <a href="https://github.com/immunedev" target="_blank" rel="noopener noreferrer" className="hover:underline">SOHA PSA</a>
             </div>
         </footer>
     );
