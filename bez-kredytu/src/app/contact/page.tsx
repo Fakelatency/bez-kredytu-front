@@ -9,12 +9,12 @@ const ContactPage: React.FC = () => {
             <section className="max-w-[80%] mx-auto px-4 py-12">
                 <div className="mb-10 text-center">
                     <h2 className="text-5xl font-extrabold text-indigo-900 mb-4 drop-shadow-sm">
-                        Skontaktuj się z nami
+                        Skontaktuj się z nami!
                     </h2>
                     <p className="text-lg text-gray-700 max-w-xl mx-auto">
                         Masz pytania dotyczące kredytów, wsparcia prawnego lub innego tematu? Poprzez wypełnienie formularza skontaktujesz się z naszym zespołem, który pokieruje w kwesti dalszych kroków.
                     </p>
-                    <strong>Jesteśmy tutaj, aby Ci pomóc!</strong>
+                    <p className="mt-6 text-xl font-bold text-indigo-900">Jesteśmy tutaj, aby Ci pomóc!</p>
                 </div>
                 <ContactForm />
                 

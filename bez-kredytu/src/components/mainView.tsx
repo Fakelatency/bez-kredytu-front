@@ -29,13 +29,13 @@ const MainView: React.FC = () => {
                     Bezpłatna analiza umowy kredytowej!
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl mb-4 text-gray-800">
-                    Spłaciłeś lub dalej spłacasz kredyt w walucie obcej? Masz pytania dotyczące zawartej umowy? A może potrzebujesz porady prawnej w innej kwestii? Nasz zespół jest gotowy podzielić się z Tobą swoim doświadczeniem i wiedzą. Zapewniamy wsparcie wyspecjalizowanych radców prawnych – niezależnie od rodzaju sprawy, z którą się do nas zgłosisz.
+                    Spłaciłeś lub dalej spłacasz kredyt w walucie obcej? Masz pytania dotyczące zawartej umowy? A może potrzebujesz porady prawnej w innej kwestii? Nasz zespół jest gotowy podzielić się z Tobą swoim doświadczeniem i wiedzą. Zapewniamy wsparcie wyspecjalizowanych adwokatów i radców prawnych – niezależnie od rodzaju sprawy, z którą się do nas zgłosisz.
                 </p>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-red-700">
                     Skontaktuj się z nami!
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl font-semibold mb-6 text-gray-800">
-                    Wspólnie zdefiniujemy problem, wyznaczymy cel i podejmiemy konkretne kroki
+                    Wspólnie zdefiniujemy problem, wyznaczymy cel i podejmiemy konkretne kroki prawne.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg mb-8 text-gray-700 italic">
                     Nasze wynagrodzenie jest zależne wyłącznie od osiągniętego sukcesu.
